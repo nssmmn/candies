@@ -1,0 +1,23 @@
+{
+  "name": "candies",
+  "version": "0.0.1",
+  "description": "A node.js package to generate a sample of length n.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nssmmn/candies.git"
+  },
+  "keywords": [
+    "sample",
+    "random"
+  ],
+  "author": "nssmmn <nssmmn@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nssmmn/candies/issues"
+  },
+  "homepage": "https://github.com/nssmmn/candies"
+}
