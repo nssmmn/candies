@@ -15,7 +15,7 @@ function _uniform_d (n,a,b){
 }
 
 _uniform = _uniform_c;
-_uniform.continous = _uniform_c;
+_uniform.continuous = _uniform_c;
 _uniform.discrete = _uniform_d;
 
 function _poisson (n,lambda){
