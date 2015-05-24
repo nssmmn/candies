@@ -1,6 +1,6 @@
 {
   "name": "candies",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A node.js package to generate a sample of length n.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "sample",
     "random"
   ],
-  "author": "nssmmn <nssmmn@gmail.com>",
+  "author": "nssmmn <nssmmn@gmail.com> (https://nssmmn.github.io/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nssmmn/candies/issues"
