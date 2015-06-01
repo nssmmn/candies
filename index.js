@@ -64,10 +64,21 @@ function _exponential(n,lambda){
   return sample;
 }
 
+function _pareto(n,m,a){
+  var sample = [];
+  for (var i = 0 ; i < n ; i++){
+    u = Math.random();
+    if(!u) u = 1;
+    sample.push( m / Math.pow(u,(1/a)) );
+  }
+  return sample;
+}
+
 module.exports={
   uniform : _uniform,
   poisson : _poisson,
   normal : _normal,
   gaussian : _normal,
-  exponential : _exponential
+  exponential : _exponential,
+  pareto : _pareto
 };
