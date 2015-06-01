@@ -55,9 +55,19 @@ function _normal(n,m,sd){
   return sample;
 }
 
+function _exponential(n,lambda){
+  lambda = lambda || 1;
+  var sample = [];
+  for (var i = 0 ; i < n ; i++){
+    sample.push( - Math.log ( Math.random() ) / lamda );
+  }
+  return sample;
+}
+
 module.exports={
   uniform : _uniform,
   poisson : _poisson,
   normal : _normal,
-  gaussian : _normal
+  gaussian : _normal,
+  exponential : _exponential
 };
