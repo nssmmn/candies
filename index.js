@@ -1,3 +1,31 @@
+function _isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function _sum(){
+  return Array.prototype.map.call(arguments,function(x){
+    if ( _isNumeric(x) ){
+        return +parseFloat(x);
+    }
+    else if ( Array.isArray(x) ){
+      return _sum.apply(null,x);
+    } else {
+      return typeof x != 'boolean'? 0: x ? 1 : 0;
+    }
+  }).reduce( function(x,y){
+    return x+y;
+  });
+}
+
+function _cumsum(arr){
+  n = arr.length;
+  if ( n < 2 ) return (arr);
+  for( var i = 1 ; i < n ; i++){
+    arr[i] += arr[i-1];
+  }
+  return arr;
+}
+
 function _uniform_c(size,a,b){
   a = a || 0;
   b = b || a+1;
@@ -111,6 +139,27 @@ function _pareto(size,m,a){
   return sample;
 }
 
+function _urn(size,val,weight){
+  var sample = [],
+      s = _sum(weight),
+      c = _cumsum(weight);
+
+  var prob = c.map(function(x){
+    return x/s;
+  });
+
+  for (var i = 0 ; i < size ; i++){
+    var j = -1;
+    var u = Math.random();
+    do {
+      j++;
+    } while (u > prob[j]);
+    sample.push(val[j]) ;
+  }
+
+  return sample;
+}
+
 module.exports={
   uniform : _uniform,
   bernouli : _bernouli,
@@ -119,5 +168,8 @@ module.exports={
   normal : _normal,
   gaussian : _normal,
   exponential : _exponential,
-  pareto : _pareto
+  pareto : _pareto,
+  cumsum : _cumsum,
+  sum : _sum,
+  urn : _urn
 };
