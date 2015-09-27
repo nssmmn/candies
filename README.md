@@ -1,47 +1,33 @@
 ![Candies Logo](/candies-logo.png)
-# candies
+
+# Candies
 A node.js package to generate a sample of length n.
 
-Until now there are 7 distributions:
+Available generators are:
 
-* Uniform distribution (discrete and continuous).
-* Bernouli distribution.
-* Binomial distribution.
-* Poisson distribution.
-* Normal (Gaussian) distribution.
-* Exponential distribution.
-* Pareto distribution.
+* **Uniform** distribution (**discrete** and **continuous**).
+* **Bernouli** distribution.
+* **Binomial** distribution.
+* **Poisson** distribution.
+* **Normal (Gaussian)** distribution.
+* **Exponential** distribution.
+* **Pareto** distribution.
+* ***Urn***.
 
 ## Usage
+```
+npm install candies
+```
+
 ```js
 var C = require('candies');
 
-var n = 10; // For a sample of length n.
+var n = 10,
+    values = ['mint','orange','strawberry'],
+    weight = [.2,.3,.5];
 
-//Uniform distribution
-var sample = C.uniform.continuous(n,0,2);  // equivalent to C.uniform(n,0,2);
-var sample = C.uniform.continuous(n,5); // equivalent to C.uniform.continuous(n,5,6);
-var sample = C.uniform.continuous(n); // equivalent to C.uniform.continuous(n,0,1);
-
-var sample = C.uniform.discrete(n,0,5);
-
-//Bernouli distribution
-var sample = C.bernouli(n,.3);
-
-//Binomial distribution
-var sample = C.binomial(n,5,.3);
-
-//Poisson distribution
-var sample = C.poisson(n,1);
-
-//Normal distribution
-var sample = C.normal(n,2,2); // equivalent to C.gaussian(n,2,2)
-var sample = C.normal(n); // equivalent to C.normal(n,0,1)
-
-//Exponential distribution
-var sample = C.exponential(n,2);
-var sample = C.exponential(n); // equivalent to C.exponential(n,1)
-
-//Pareto distribution
-var sample = C.pareto(n,1000,1.5); // C.pareto(n,xmin,alpha)
+var sample = C.urn(n,value,weight);
+// generate randomly a sample of 10.
 ```
+
+For more details [see the wiki.](https://github.com/nssmmn/candies/wiki)
