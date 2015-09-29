@@ -41,7 +41,7 @@ function _uniform_d (size,a,b){
   b = b || a+1;
   var sample = [];
   for (var i = 0 ; i < size ; i++){
-    sample.push( Math.round(a-0.5 + (b-a+0.5) * Math.random()));
+    sample.push( Math.round( (a - 0.5) + (b - a + 1) * Math.random()));
   }
   return sample;
 }

@@ -1,6 +1,6 @@
 {
   "name": "candies",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A node.js package to generate a sample of length n.",
   "main": "index.js",
   "scripts": {
