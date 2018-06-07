@@ -19,4 +19,4 @@ var sample = C.urn(n,values,weight);
 // generate randomly a sample of 10.
 ```
 
-For more details [see the wiki](https://github.com/nssmmn/candies/wiki).
+For more details [see the wiki](https://gitlab.com/nssmmn/candies/wikis/home).
